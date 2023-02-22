@@ -1,0 +1,22 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}User Page!{% endblock %}
+
+{% block body %}
+<script src="//cdnjs.cloudflare.com/ajax/libs/validate.js/0.13.1/validate.min.js">
+</script>
+
+
+<div class="container my-5">  
+        <h3 class="">You Are Now Registered</h3>
+        <p>
+        Thank you for registering with us <span class="fw-semibold fs-5 fst-italic" id="registeredUser"></span>.
+        </p>
+        <p class="lh-sm">You can now go back to the main page a log in by clicking the Log in link below!!!</p>
+        <a class="float-end" href="{{ path('app_login') }}">Log in</a>
+</div>
+
+
+<script src="{{ asset('js/user.js') }}"></script>
+
+{% endblock %}

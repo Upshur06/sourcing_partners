@@ -1,0 +1,41 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Log in Page{% endblock %}
+
+{% block body %}
+<script src="//cdnjs.cloudflare.com/ajax/libs/validate.js/0.13.1/validate.min.js">
+</script>
+
+<div class="container">
+    <div class="d-flex flex-column justify-content-center" style="height:100vh">
+        <div class='pb-2 d-flex justify-content-center'>
+            <img src="\images\longLogo.png" alt="img">
+        </div>
+
+        <form method="POST" id="loginForm" onsubmit="loginFunc(event)">      
+                <div class='mb-3 row d-flex justify-content-center'>
+                    <div class="col-5">
+                        <input id="username" name="username" class="form-control" type="text" placeholder="John Doe" />
+                        <div id="usernameError" style="color:red; font-style:italic; padding:5px"></div>
+                    </div> 
+                </div>
+                <div class='mb-3 row d-flex justify-content-center'>  
+                    <div class="col-5">
+                        <input id="password" name="password" class="form-control" type="password" placeholder="password" />
+                        <div id="passwordError" style="color:red; font-style:italic; padding:5px"></div>
+                    </div>                
+                </div>
+                <div class='mb-3 d-grid col-4 mx-auto'>
+                    <input class="btn btn-primary" type="submit" name="submit">
+                </div>        
+        </form>
+
+        <div>
+        <a class="text-center" href="{{ path('app_register') }}"><p>New User? Register Here!</p></a>
+        </div>
+    </div>
+
+    <script src="{{ asset('js/login.js') }}"></script>
+</div>
+
+{% endblock %}

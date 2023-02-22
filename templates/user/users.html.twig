@@ -1,0 +1,33 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Users{% endblock %}
+
+{% block body %}
+<h1>Users</h1>
+
+<div class="container">
+
+    <table class='table table-striped'>
+        <thead>
+            <tr class="border">
+                <th class="">Username</th>
+                <th class="">User email</th>
+                <th class="">User password</th>
+                <th class="">User confrimed password</th>
+            </tr>
+        </thead>
+        </tbody>
+            {% for user in user_data %}
+            <tr class="border">
+                <td> {{ user.username }} </td>
+                <td> {{ user.emailaddress }} </td>
+                <td> {{ user.password }} </td>
+                <td> {{ user.confirmpassword }} </td>
+            </tr>
+            {% endfor %}
+        <tbody>
+    </table>
+    
+</div>
+
+{% endblock %}

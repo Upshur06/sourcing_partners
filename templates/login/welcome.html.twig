@@ -1,0 +1,15 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Welcome Page{% endblock %}
+
+{% block body %}
+
+<div class="d-flex justify-content-between px-3 py-4">
+
+    <h3>Welcome <span id="logginUser"></span></h3>
+    <a id="logout" style='text-decoration:none;' href="{{ path('app_login') }}">log out</a>
+</div>
+
+<script src="{{ asset('js/welcome.js') }}"></script>
+
+{% endblock %}

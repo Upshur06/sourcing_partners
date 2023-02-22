@@ -1,0 +1,56 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Register Page{% endblock %}
+
+{% block body %}
+<script src="//cdnjs.cloudflare.com/ajax/libs/validate.js/0.13.1/validate.min.js">
+</script>
+
+<div class="d-flex flex-column justify-content-center pb-5" style="height:100vh">
+    <div class="mb-3 d-flex justify-content-center">
+        <img src="\images\longLogo.png" alt="img">
+    </div>
+
+    <form method="POST" id="registerForm" onsubmit="registerFunc(event)">
+        <div class="mx-2 text-light">
+            <div class='mb-3 row d-flex justify-content-center'> 
+                <label class="col-2 col-form-lable">Username: </label>
+                <div class="col-4">
+                    <input id="username" name="username" class="form-control" type="text" placeholder="John Doe" />
+                    <div id="usernameError" style="color:red; font-style:italic; padding:5px"></div>
+                </div>
+            </div>
+
+            <div class='mb-3 row d-flex justify-content-center'> 
+                <label class="col-2 col-form-lable">Email Address: </label>
+                <div class="col-4">
+                    <input id="email" name="email" class="form-control" type="text" placeholder="example@email.com" />
+                    <div id="emailError" style="color:red; font-style:italic; padding:5px"></div>
+                </div>
+            </div>
+
+            <div class='mb-3 row d-flex justify-content-center'> 
+                <label class="col-2 col-form-lable">Password: </label>
+                <div class="col-4">
+                    <input id="password" name="password" class="form-control" type="password" placeholder="Password" />
+                    <div id="passwordError" style="color:red; font-style:italic; padding:5px"></div>
+                </div>
+            </div>
+
+            <div class='mb-3 row d-flex justify-content-center'> 
+                <label class="col-2 col-form-lable">Confrim Password: </label>
+                <div class="col-4">
+                    <input id="confirm" name="confirm" class="form-control" type="password" placeholder="Password" mb-3 border d-grid col-4 mx-auto/>
+                    <div id="confirmError" style="color:red; font-style:italic; padding:5px"></div>
+                </div>
+            </div>
+
+            <div class='mb-3 d-grid col-3 mx-auto'>
+                <input id="submit" class="btn btn-primary" type="submit" name="submit">
+            </div>
+        </div>
+    </form>
+</div>
+
+    <script src="{{ asset('js/register.js') }}"></script>
+{% endblock %}
